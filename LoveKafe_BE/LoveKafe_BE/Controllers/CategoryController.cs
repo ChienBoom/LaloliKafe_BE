@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             Category category = _context.Category.FirstOrDefault(o => o.Id == id);
             if (category == null) return NotFound();
             _context.Category.Remove(category);
+            _context.SaveChangesAsync();
             return Ok();
         }
 

@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             UserDetail userDetail = _context.UserDetail.FirstOrDefault(o => o.Id == id);
             if (userDetail == null) return NotFound();
             _context.UserDetail.Remove(userDetail);
+            _context.SaveChangesAsync();
             return Ok();
         }
     }

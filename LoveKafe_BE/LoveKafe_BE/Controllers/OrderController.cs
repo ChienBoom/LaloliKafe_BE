@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             Order order = _context.Order.FirstOrDefault(o => o.Id == id);
             if (order == null) return NotFound();
             _context.Order.Remove(order);
+            _context.SaveChangesAsync();
             return Ok();
         }
     }

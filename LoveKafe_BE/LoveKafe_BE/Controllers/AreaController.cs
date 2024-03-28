@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             Area area = _context.Area.FirstOrDefault(o => o.Id == id);
             if (area == null) return NotFound();
             _context.Area.Remove(area);
+            _context.SaveChangesAsync();
             return Ok();
         }
     }

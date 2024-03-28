@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             Product product = _context.Product.FirstOrDefault(o => o.Id == id);
             if (product == null) return NotFound();
             _context.Product.Remove(product);
+            _context.SaveChangesAsync();
             return Ok();
         }
     }

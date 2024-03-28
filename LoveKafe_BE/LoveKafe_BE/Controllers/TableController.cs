@@ -53,6 +53,7 @@ namespace LoveKafe_BE.Controllers
             Table table = _context.Table.FirstOrDefault(o => o.Id == id);
             if (table == null) return NotFound();
             _context.Table.Remove(table);
+            _context.SaveChangesAsync();
             return Ok();
         }
     }
