@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace LoveKafe_BE.Models
 {
@@ -21,6 +22,7 @@ namespace LoveKafe_BE.Models
         [Required]
         public decimal Price { get; set; }
         [NotMapped]
+        [JsonIgnore]
         public virtual List<OrderDetail>? OrderDetails { get; set; }
         public string? Description { get; set; }
         public string? UrlImage { get; set; }

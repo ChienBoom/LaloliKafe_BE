@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace LoveKafe_BE.Models
 {
@@ -7,6 +8,7 @@ namespace LoveKafe_BE.Models
     {
         [Required]
         public Guid UserDetailId { get; set; }
+        [JsonIgnore]
         public virtual UserDetail UserDetail { get; set; }
 
     }

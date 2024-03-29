@@ -1,6 +1,7 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -17,14 +18,14 @@ namespace LoveKafe_BE.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Table> tables = _context.Table.ToList();
+            List<Table> tables = _context.Table.Include(o => o.Area).ToList();
             return Ok(new ResultData<Table> { TotalCount = tables.Count, Data = tables });
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
-            Table table = _context.Table.FirstOrDefault(c => c.Id == id);
+            Table table = _context.Table.Include(o => o.Area).FirstOrDefault(c => c.Id == id);
             if (table == null) return NotFound();
             return Ok(table);
         }
