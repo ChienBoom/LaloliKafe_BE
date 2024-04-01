@@ -12,9 +12,13 @@ namespace LoveKafe_BE.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Required]
+        public string Code { get; set; }
+        [Required]
         public DateTime OrderDate { get; set; }
         [Required]
         public Guid TableId { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDelete { get; set; }
         [NotMapped]
         public virtual Table? Table { get; set; }
         [NotMapped]

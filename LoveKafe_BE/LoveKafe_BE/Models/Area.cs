@@ -15,6 +15,7 @@ namespace LoveKafe_BE.Models
         public string Name { get; set; }
         [Required] 
         public string Code { get; set; }
+        public bool IsDelete { get; set; }
         [NotMapped]
         [JsonIgnore]
         public virtual List<Table>? Tables { get; set; }

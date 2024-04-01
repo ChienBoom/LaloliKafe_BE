@@ -1,7 +1,10 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using LoveKafe_BE.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Dynamic.Core;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -10,15 +13,29 @@ namespace LoveKafe_BE.Controllers
     public class OrderDetailController : Controller
     {
         private AppDbContext _context;
-        public OrderDetailController(AppDbContext context)
+        private Util _util;
+        public OrderDetailController(AppDbContext context, Util util)
         {
             _context = context;
+            _util = util;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<OrderDetail> orderDetails = _context.OrderDetail.Include(o => o.Order).Include(o => o.Product).ToList();
+            string queryString = HttpContext.Request.QueryString.ToString();
+            Dictionary<string, string> queryParams = _util.ParseQueryString(queryString);
+
+            Dictionary<string, string> queryModels = new Dictionary<string, string>();
+
+            if (queryParams.TryGetValue("orderId", out string orderId) && orderId != null && orderId != "undefined") queryModels.Add("orderId", orderId);
+
+            var query = _context.OrderDetail.Include(o => o.Order).AsQueryable();
+            foreach (var param in queryModels)
+            {
+                query = query.Where(param.Key + " == @0", param.Value);
+            }
+            List<OrderDetail> orderDetails = query.ToList();
             return Ok(new ResultData<OrderDetail> { TotalCount = orderDetails.Count, Data = orderDetails });
         }
 

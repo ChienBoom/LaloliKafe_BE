@@ -23,5 +23,7 @@ namespace LoveKafe_BE.Models
         [JsonIgnore]
         public virtual List<Order>? Orders { get; set; }
         public string? Description { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

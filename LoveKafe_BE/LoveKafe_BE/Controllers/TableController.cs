@@ -1,7 +1,10 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using LoveKafe_BE.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Dynamic.Core;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -10,15 +13,29 @@ namespace LoveKafe_BE.Controllers
     public class TableController : Controller
     {
         private AppDbContext _context;
-        public TableController(AppDbContext context)
+        private Util _util;
+        public TableController(AppDbContext context, Util util)
         {
             _context = context;
+            _util = util;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<Table> tables = _context.Table.Include(o => o.Area).ToList();
+            string queryString = HttpContext.Request.QueryString.ToString();
+            Dictionary<string, string> queryParams = _util.ParseQueryString(queryString);
+
+            Dictionary<string, string> queryModels = new Dictionary<string, string>();
+
+            if (queryParams.TryGetValue("areaId", out string areaId) && areaId != null && areaId != "undefined") queryModels.Add("areaId", areaId);
+
+            var query = _context.Table.Include(o => o.Area).AsQueryable();
+            foreach (var param in queryModels)
+            {
+                query = query.Where(param.Key + " == @0", param.Value);
+            }
+            List<Table> tables = query.ToList();
             return Ok(new ResultData<Table> { TotalCount = tables.Count, Data = tables });
         }
 

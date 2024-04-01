@@ -26,5 +26,6 @@ namespace LoveKafe_BE.Models
         public virtual List<OrderDetail>? OrderDetails { get; set; }
         public string? Description { get; set; }
         public string? UrlImage { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

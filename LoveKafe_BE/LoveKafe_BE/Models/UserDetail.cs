@@ -24,5 +24,6 @@ namespace LoveKafe_BE.Models
         [NotMapped]
         public virtual AppUser? AppUser { get; set; }
         public string? UrlImage { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

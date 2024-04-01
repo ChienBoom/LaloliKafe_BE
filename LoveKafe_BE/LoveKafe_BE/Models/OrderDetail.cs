@@ -20,5 +20,7 @@ namespace LoveKafe_BE.Models
         public virtual Order? Order { get; set; }
         [NotMapped]
         public virtual Product? Product { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

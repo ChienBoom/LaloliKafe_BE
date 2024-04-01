@@ -21,6 +21,7 @@ namespace LoveKafe_BE.Models
         
         public string? Description { get; set; }
         public string? UrlImage { get; set; }
+        public int IsDelete { get; set; }
 
     }
 }
