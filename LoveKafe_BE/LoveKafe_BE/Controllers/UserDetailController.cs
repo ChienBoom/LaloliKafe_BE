@@ -1,6 +1,10 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using LoveKafe_BE.Utils;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Dynamic.Core;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -9,15 +13,29 @@ namespace LoveKafe_BE.Controllers
     public class UserDetailController : Controller
     {
         private AppDbContext _context;
-        public UserDetailController(AppDbContext context)
+        private Util _util;
+        public UserDetailController(AppDbContext context, Util util)
         {
             _context = context;
+            _util = util;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<UserDetail> userDetails = _context.UserDetail.ToList();
+            string queryString = HttpContext.Request.QueryString.ToString();
+            Dictionary<string, string> queryParams = _util.ParseQueryString(queryString);
+
+            Dictionary<string, string> queryModels = new Dictionary<string, string>();
+
+            if (queryParams.TryGetValue("role", out string role) && role != null) queryModels.Add("role", role);
+            
+            var query = _context.UserDetail.AsQueryable();
+            foreach (var param in queryModels)
+            {
+                query = query.Where(param.Key + " == @0", param.Value);
+            }
+            List<UserDetail> userDetails = query.ToList();
             return Ok(new ResultData<UserDetail> { TotalCount = userDetails.Count, Data = userDetails });
         }
 

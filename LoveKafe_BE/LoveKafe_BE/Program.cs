@@ -6,6 +6,7 @@ using System.Text;
 using System;
 using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using LoveKafe_BE.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -58,6 +59,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<Util>();
 
 var app = builder.Build();
 

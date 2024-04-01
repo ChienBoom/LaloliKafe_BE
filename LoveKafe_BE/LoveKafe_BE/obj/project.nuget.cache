@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p+KZ/RApH1LZIuwMN5dZ6yKzoolIJbwQTFr7eWr5PiR764otslkD4ygXOh/e/iRFM+1s1W8n/aZm+1zyHR5IGA==",
+  "dgSpecHash": "Sr26VZqML6tD6kxfnBbt9MlK/1Zj0lmiN1LdbgM5mQboxfYGckWwnJ3d9fZ/NUE99/PHAsHav/1M3bv0u7/uLA==",
   "success": true,
   "projectFilePath": "D:\\MyWeb\\LoveKafe\\LoveKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\LoveKafe_BE.csproj",
   "expectedPackageFiles": [
@@ -52,6 +52,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.linq.dynamic.core\\1.3.10\\system.linq.dynamic.core.1.3.10.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

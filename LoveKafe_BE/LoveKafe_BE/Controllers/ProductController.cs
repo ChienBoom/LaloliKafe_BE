@@ -1,7 +1,10 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using LoveKafe_BE.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Dynamic.Core;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -10,15 +13,30 @@ namespace LoveKafe_BE.Controllers
     public class ProductController : Controller
     {
         private AppDbContext _context;
-        public ProductController(AppDbContext context)
+        private Util _util;
+        public ProductController(AppDbContext context, Util util)
         {
             _context = context;
+            _util = util;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            List<Product> products = _context.Product.Include(o => o.Category).ToList();
+            string queryString = HttpContext.Request.QueryString.ToString();
+            Dictionary<string, string> queryParams = _util.ParseQueryString(queryString);
+
+            Dictionary<string, string> queryModels = new Dictionary<string, string>();
+
+            if (queryParams.TryGetValue("categoryId", out string categoryId) && categoryId != null && categoryId != "undefined") queryModels.Add("categoryId", categoryId);
+
+            var query = _context.Product.Include(o => o.Category).AsQueryable();
+            foreach (var param in queryModels)
+            {
+                query = query.Where(param.Key + " == @0", param.Value);
+            }
+            List<Product> products = query.ToList();
+
             return Ok(new ResultData<Product> { TotalCount = products.Count, Data = products });
         }
 

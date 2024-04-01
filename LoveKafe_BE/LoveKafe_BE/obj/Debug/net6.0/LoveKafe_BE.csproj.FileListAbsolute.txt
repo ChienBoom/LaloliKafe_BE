@@ -73,3 +73,4 @@ D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\refint\Lo
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\LoveKafe_BE.pdb
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\LoveKafe_BE.genruntimeconfig.cache
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\ref\LoveKafe_BE.dll
+D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
