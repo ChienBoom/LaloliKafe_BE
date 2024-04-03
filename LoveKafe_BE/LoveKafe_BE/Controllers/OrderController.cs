@@ -28,7 +28,7 @@ namespace LoveKafe_BE.Controllers
 
             Dictionary<string, string> queryModels = new Dictionary<string, string>();
 
-            if (queryParams.TryGetValue("tableId", out string tableId) && tableId != null && tableId != "undefined") queryModels.Add("tableId", tableId);
+            if (queryParams.TryGetValue("tableId", out string tableId) && tableId != null && tableId != "" && tableId != "undefined") queryModels.Add("tableId", tableId);
 
             var query = _context.Order.Include(o => o.Table).AsQueryable();
             foreach (var param in queryModels)
@@ -36,7 +36,7 @@ namespace LoveKafe_BE.Controllers
                 query = query.Where(param.Key + " == @0", param.Value);
             }
 
-            List<Order> orders = query.ToList();
+            List<Order> orders = query.OrderByDescending(o => o.OrderDate).ToList();
             return Ok(new ResultData<Order> { TotalCount = orders.Count, Data = orders });
         }
 

@@ -30,7 +30,7 @@ namespace LoveKafe_BE.Controllers
 
             if (queryParams.TryGetValue("orderId", out string orderId) && orderId != null && orderId != "undefined") queryModels.Add("orderId", orderId);
 
-            var query = _context.OrderDetail.Include(o => o.Order).AsQueryable();
+            var query = _context.OrderDetail.Include(o => o.Order).Include(o => o.Product).AsQueryable();
             foreach (var param in queryModels)
             {
                 query = query.Where(param.Key + " == @0", param.Value);
