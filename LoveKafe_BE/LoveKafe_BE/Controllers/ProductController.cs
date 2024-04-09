@@ -1,6 +1,7 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
 using LoveKafe_BE.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -48,6 +49,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(product);
         }
 
+        //[Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] Product value)
         {
@@ -56,6 +58,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(value);
         }
 
+        //[Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody] Product value)
         {
@@ -66,6 +69,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(value);
         }
 
+        //[Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

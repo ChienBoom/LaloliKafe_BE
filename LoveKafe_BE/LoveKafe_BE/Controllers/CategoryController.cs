@@ -1,5 +1,6 @@
 ﻿using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoveKafe_BE.Controllers
@@ -29,6 +30,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(category);
         }
 
+        //[Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] Category value)
         {
@@ -37,6 +39,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(value);
         }
 
+        //[Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody] Category value)
         {
@@ -47,6 +50,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(value);
         }
 
+        //[Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
