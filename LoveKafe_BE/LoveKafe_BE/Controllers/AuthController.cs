@@ -35,7 +35,6 @@ namespace LoveKafe_BE.Controllers
         public async Task<IActionResult> Login([FromBody] Login model)
         {
             var user = await _userManager.FindByNameAsync(model.Username);
-            var checkPassword = await _userManager.CheckPasswordAsync(user, model.Password);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
                 var userRoles = await _userManager.GetRolesAsync(user);
@@ -52,10 +51,12 @@ namespace LoveKafe_BE.Controllers
                 }
 
                 var token = GetToken(authClaims);
+                var userDetail = _appDbContext.UserDetail.Where(o => o.Username.Equals(model.Username)).FirstOrDefault();
 
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
+                    userDetail = userDetail,
                     expiration = token.ValidTo
                 });
             }
