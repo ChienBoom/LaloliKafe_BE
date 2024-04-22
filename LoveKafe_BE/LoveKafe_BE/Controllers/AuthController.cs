@@ -161,6 +161,16 @@ namespace LoveKafe_BE.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
+        [Authorize]
+        [HttpGet("my-profile")]
+        public async Task<IActionResult> getProfile()
+        {
+            var userName = HttpContext.User.Identity.Name;
+            var user = _appDbContext.UserDetail.FirstOrDefault(user => user.Username.Equals(userName));
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
         private JwtSecurityToken GetToken(List<Claim> authClaims)
         {
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));

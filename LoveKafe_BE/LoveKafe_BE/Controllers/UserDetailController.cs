@@ -2,6 +2,7 @@
 using LoveKafe_BE.Models;
 using LoveKafe_BE.Utils;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -13,14 +14,25 @@ namespace LoveKafe_BE.Controllers
     [Route("api/[controller]")]
     public class UserDetailController : Controller
     {
+        private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IConfiguration _configuration;
         private AppDbContext _context;
         private Util _util;
-        public UserDetailController(AppDbContext context, Util util)
+        public UserDetailController(
+            UserManager<AppUser> userManager,
+             RoleManager<IdentityRole> roleManager,
+             IConfiguration configuration,
+            AppDbContext context, Util util)
         {
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _configuration = configuration;
             _context = context;
             _util = util;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -50,7 +62,7 @@ namespace LoveKafe_BE.Controllers
 
         //[Authorize]
         [HttpPost]
-        public IActionResult Post([FromBody] UserDetail value)
+        public async Task<IActionResult> Post([FromBody] UserDetail value)
         {
             _context.UserDetail.Add(value);
             _context.SaveChanges();
