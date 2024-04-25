@@ -50,15 +50,61 @@ namespace LoveKafe_BE.Controllers
                     authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                 }
 
-                var token = GetToken(authClaims);
+                var refreshToken = GetRefreshToken(authClaims);
+                var accessToken = GetAccessToken(authClaims);
                 var userDetail = _appDbContext.UserDetail.Where(o => o.Username.Equals(model.Username)).FirstOrDefault();
 
                 return Ok(new
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    refreshToken = new JwtSecurityTokenHandler().WriteToken(refreshToken),
+                    accessToken = new JwtSecurityTokenHandler().WriteToken(accessToken),
                     userDetail = userDetail,
-                    expiration = token.ValidTo
+                    expirationRefreshToken = refreshToken.ValidTo,
+                    expirationAccessToken = accessToken.ValidTo
                 });
+            }
+            return Unauthorized();
+        }
+
+        [HttpPost]
+        [Route("getAccessToken")]
+        public async Task<IActionResult> GetAccessToken([FromBody] Token value)
+        {
+            var refreshToken = value.RefreshToken;
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(refreshToken) as JwtSecurityToken;
+            if (jsonToken != null)
+            {
+                var userName = jsonToken.Claims.FirstOrDefault(claim => claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value;
+
+                if (userName != null)
+                {
+                    var user = await _userManager.FindByNameAsync(userName);
+
+                    if (user != null)
+                    {
+                        var userRoles = await _userManager.GetRolesAsync(user);
+
+                        var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                };
+
+                        foreach (var userRole in userRoles)
+                        {
+                            authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                        }
+                        var accessToken = GetAccessToken(authClaims);
+
+                        return Ok(new
+                        {
+                            accessToken = new JwtSecurityTokenHandler().WriteToken(accessToken),
+                            expirationAccessToken = accessToken.ValidTo
+                        });
+                    }
+                    return Unauthorized();
+                }
             }
             return Unauthorized();
         }
@@ -171,14 +217,30 @@ namespace LoveKafe_BE.Controllers
             return Ok(user);
         }
 
-        private JwtSecurityToken GetToken(List<Claim> authClaims)
+        private JwtSecurityToken GetRefreshToken(List<Claim> authClaims)
         {
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddHours(12),
+                expires: DateTime.Now.AddMonths(6),
+                claims: authClaims,
+                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+
+            return token;
+        }
+
+        private JwtSecurityToken GetAccessToken(List<Claim> authClaims)
+        {
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["JWT:ValidIssuer"],
+                audience: _configuration["JWT:ValidAudience"],
+                // expires: DateTime.Now.AddDays(5),
+                expires: DateTime.Now.AddMinutes(3),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                 );
