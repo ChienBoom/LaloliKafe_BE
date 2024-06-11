@@ -125,7 +125,8 @@ namespace LoveKafe_BE.Controllers
                 DateOfBirth = model.DateOfBirth,
                 Address = model.Address,
                 Sex = model.Sex,
-                UrlImage = model.UrlImage
+                UrlImage = model.UrlImage,
+                Role = "User"
             };
             _appDbContext.UserDetail.Add(userDetail);
             _appDbContext.SaveChanges();
@@ -153,7 +154,7 @@ namespace LoveKafe_BE.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("register-admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] Register model)
@@ -171,7 +172,8 @@ namespace LoveKafe_BE.Controllers
                 DateOfBirth = model.DateOfBirth,
                 Address = model.Address,
                 Sex = model.Sex,
-                UrlImage = model.UrlImage
+                UrlImage = model.UrlImage,
+                Role = "User"
             };
             _appDbContext.UserDetail.Add(userDetail);
             _appDbContext.SaveChanges();

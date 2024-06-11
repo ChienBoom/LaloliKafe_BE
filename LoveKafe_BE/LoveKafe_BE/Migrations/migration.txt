@@ -1,0 +1,4 @@
+Add migration:
+Add-migration tem-migration
+Update migration:
+Update-Database

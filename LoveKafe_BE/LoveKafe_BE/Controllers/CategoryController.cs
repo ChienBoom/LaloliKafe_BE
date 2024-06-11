@@ -2,6 +2,7 @@
 using LoveKafe_BE.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace LoveKafe_BE.Controllers
 {
@@ -9,16 +10,22 @@ namespace LoveKafe_BE.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        private AppDbContext _context;
-        public CategoryController(AppDbContext context)
+        private readonly AppDbContext _context;
+        private readonly ILogger<CategoryController> _logger;
+        public CategoryController(AppDbContext context, ILogger<CategoryController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             List<Category> categories = _context.Category.ToList();
+            _logger.LogInformation("LoveKafe getCategory");
+            _logger.LogWarning("This is a warning log message from HomeController.");
+            _logger.LogError("This is an error log message from HomeController.");
+            Log.Information("LoveKafe getCategory");
             return Ok(new ResultData<Category> { TotalCount =  categories.Count, Data = categories });
         }
 

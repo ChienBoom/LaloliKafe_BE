@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4de05f6ef843bdf3ca08312e0406eda3eb9acfed")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

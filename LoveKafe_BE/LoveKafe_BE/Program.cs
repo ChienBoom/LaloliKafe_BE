@@ -7,8 +7,41 @@ using System;
 using LoveKafe_BE.Auth;
 using LoveKafe_BE.Models;
 using LoveKafe_BE.Utils;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Cònig log seq
+var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .Build();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(config)
+    .CreateLogger();
+
+//Log.Logger = new LoggerConfiguration()
+//    .WriteTo.Console()  // Ghi log vào console
+//    .WriteTo.Seq("http://localhost:5341")  // Ghi log vào Seq
+//    .CreateLogger();
+
+//builder.Host.UseSerilog();
+
+try
+{
+    Log.Information("LoveKafe Start");
+    Console.WriteLine("LoveKafe Start");
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "LoveKafe start-up failed");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
+
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
@@ -70,7 +103,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("AllowReactApp");
-
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
