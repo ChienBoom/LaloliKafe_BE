@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "54VYiX+Su+V3ZCrh/iLxIslas8QqqMchn/oiQspMH2CoVD2md5O0vUyCGAQF+tO6xBEKpK1N8UioXNvC8XvtdA==",
+  "dgSpecHash": "RxCJeFilUB3i6DTIYKVEgVckE1ZwnrggAQzQL+C05WZnOzKsxf1JH6OmC0rSyF3eNElVFUH4+4fMMNt83cAPHQ==",
   "success": true,
   "projectFilePath": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\LoveKafe_BE.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\serilog\\4.0.0\\serilog.4.0.0.nupkg.sha512",

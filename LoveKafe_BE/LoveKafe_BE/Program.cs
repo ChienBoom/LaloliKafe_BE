@@ -11,7 +11,7 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Cònig log seq
+//Cï¿½nig log seq
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -22,8 +22,8 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 //Log.Logger = new LoggerConfiguration()
-//    .WriteTo.Console()  // Ghi log vào console
-//    .WriteTo.Seq("http://localhost:5341")  // Ghi log vào Seq
+//    .WriteTo.Console()  // Ghi log vï¿½o console
+//    .WriteTo.Seq("http://localhost:5341")  // Ghi log vï¿½o Seq
 //    .CreateLogger();
 
 //builder.Host.UseSerilog();
@@ -97,13 +97,22 @@ builder.Services.AddScoped<Util>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseCors("AllowReactApp");
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+// app.Use(async (context, next) =>
+// {
+//     if (context.Request.IsHttps)
+//     {
+//         await next();
+//     }
+//     else
+//     {
+//         context.Response.Redirect($"https://{context.Request.Host}{context.Request.Path}");
+//     }
+// });
 
 app.UseAuthentication();
 app.UseAuthorization();

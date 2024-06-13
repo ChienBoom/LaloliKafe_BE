@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\migrations\\migration.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\migrations\\migration.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|e:\\myproject\\lalolikafe\\lalolikafe_be\\lovekafe_be\\lovekafe_be\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F186E1AC-7476-4F56-BFB2-CD5E7BD8AA77}|LoveKafe_BE\\LoveKafe_BE.csproj|solutionrelative:lovekafe_be\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,52 +78,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dockerfile",
-              "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\dockerfile",
-              "RelativeDocumentMoniker": "LoveKafe_BE\\dockerfile",
-              "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\dockerfile",
-              "RelativeToolTip": "LoveKafe_BE\\dockerfile",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-11T06:49:51.346Z",
+              "DocumentIndex": 2,
+              "Title": "migration.txt",
+              "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Migrations\\migration.txt",
+              "RelativeDocumentMoniker": "LoveKafe_BE\\Migrations\\migration.txt",
+              "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Migrations\\migration.txt",
+              "RelativeToolTip": "LoveKafe_BE\\Migrations\\migration.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-06-13T10:38:08.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "LoveKafe_BE\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Properties\\launchSettings.json",
+              "RelativeToolTip": "LoveKafe_BE\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-13T10:01:49.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\appsettings.json",
               "RelativeDocumentMoniker": "LoveKafe_BE\\appsettings.json",
               "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\appsettings.json",
               "RelativeToolTip": "LoveKafe_BE\\appsettings.json",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAACfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-08T16:34:15.395Z"
+              "WhenOpened": "2024-06-13T10:01:03.574Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "LoveKafe_BE\\Controllers\\CategoryController.cs",
-              "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "LoveKafe_BE\\Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T16:31:52.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Program.cs",
               "RelativeDocumentMoniker": "LoveKafe_BE\\Program.cs",
               "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Program.cs",
               "RelativeToolTip": "LoveKafe_BE\\Program.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACIAAAABAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T15:18:17.169Z",
+              "WhenOpened": "2024-06-13T09:48:41.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Dockerfile",
+              "RelativeDocumentMoniker": "LoveKafe_BE\\Dockerfile",
+              "ToolTip": "E:\\MyProject\\LaloliKafe\\LaloliKafe_BE\\LoveKafe_BE\\LoveKafe_BE\\Dockerfile",
+              "RelativeToolTip": "LoveKafe_BE\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-06-13T09:45:54.105Z",
               "EditorCaption": ""
             }
           ]

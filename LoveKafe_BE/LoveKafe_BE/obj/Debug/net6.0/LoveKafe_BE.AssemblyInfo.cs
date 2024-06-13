@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("31d61c10-ba42-4a51-bacf-73da5043a04f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4de05f6ef843bdf3ca08312e0406eda3eb9acfed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fadc2861e745268c741f9802d28b93af07e82939")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoveKafe_BE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

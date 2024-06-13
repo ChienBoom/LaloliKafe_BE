@@ -74,7 +74,6 @@ D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\LoveKafe_
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\LoveKafe_BE.genruntimeconfig.cache
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\obj\Debug\net6.0\ref\LoveKafe_BE.dll
 D:\MyWeb\LoveKafe\LoveKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
-E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\appsettings.Development.json
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\appsettings.json
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\LoveKafe_BE.exe
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\LoveKafe_BE.deps.json
