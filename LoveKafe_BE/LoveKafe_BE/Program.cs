@@ -81,10 +81,12 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         builder =>
         {
-            builder.WithOrigins("http://localhost:4321", "http://localhost:3000", "http://localhost:4000")
-                   .AllowAnyMethod()
-                   .AllowAnyHeader()
-                   .AllowCredentials();
+            builder
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithExposedHeaders("Content-Disposition")
+            .SetIsOriginAllowed(_ => true)
+            .AllowCredentials();
         });
 });
 
@@ -101,7 +103,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseCors("AllowReactApp");
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 // app.Use(async (context, next) =>
 // {
 //     if (context.Request.IsHttps)

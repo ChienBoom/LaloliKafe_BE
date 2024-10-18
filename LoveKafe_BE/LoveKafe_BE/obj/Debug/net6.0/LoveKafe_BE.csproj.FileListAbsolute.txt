@@ -174,3 +174,5 @@ E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\S
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\System.Text.Json.dll
 E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\appsettings.Development.json
+E:\MyProject\LaloliKafe\LaloliKafe_BE\LoveKafe_BE\LoveKafe_BE\bin\Debug\net6.0\appsettings.Production.json
